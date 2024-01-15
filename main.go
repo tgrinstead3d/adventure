@@ -22,49 +22,51 @@ func main() {
 	fmt.Println("In the dim light filtering through the entrance, the cave reveals itself as a rocky chamber with moss-covered walls. The limited illumination casts long shadows, creating an atmosphere of mystery and uncertainty. The air is damp, and the temperature inside is noticeably colder than you expected.")
 	fmt.Println("To your LEFT, a narrow tunnel stretches into the darkness, its path winding through the cold stone. STRAIGHT ahead, another passage beckons, its depths hidden from view. The mossy rock formations block any further exploration in other directions, enclosing you in an eerie silence.")
 	fmt.Println("As you survey the cave, you notice a suspicious lump of dirt on the ground near your feet. The lump seems out of place in the rocky environment. Without realizing the significance, you decide to ignore the pile of dirt and you head further into the cave. Which direction do you choose?")
+	fmt.Println("Please choose left or straight")
 	fmt.Scanln(&direction)
+	direction = strings.ToLower(direction)
 	for {
-		fmt.Println("Please choose left or straight")
-		fmt.Scanln(&direction)
-		direction = strings.ToLower(direction)
-
 		switch direction {
 		case "left":
+			fmt.Println("*****")
 			fmt.Println("Curiosity leading the way, you decide to venture into the tunnel to the left. As you proceed, the sound of running water becomes more pronounced, echoing off the walls of the narrow passage. The subtle vibration beneath your feet and along the cave walls suggests a subterranean river coursing through the depths. The ambient noise creates an eerie symphony, combining the rushing water with the natural hum of the cave. The path continues to wind, inviting you to explore the secrets hidden within the subterranean labyrinth.")
 			fmt.Println("Go STRAIGHT or BACK?")
 			fmt.Scanln(&direction)
-			break
+			direction = strings.ToLower(direction)
+
 			switch direction {
 			case "straight":
+				fmt.Println("*****")
 				fmt.Println("You chose straight")
 				break
 			case "back":
+				fmt.Println("*****")
 				fmt.Println("You chose back")
 				break
 			default:
-				fmt.Println("Please choose straight or back")
+				fmt.Println("Please choose STRAIGHT or BACK")
 			}
-			break
 
 		case "straight":
+			fmt.Println("*****")
 			fmt.Println("As you cautiously proceed straight into the dark path, the air becomes even colder, and the oppressive darkness seems to intensify. The narrow corridor winds deeper into the cavern, and your senses heighten as you navigate the unknown. Suddenly, without warning, the floor beneath you gives way, and you find yourself tumbling into a tight pit.")
 			fmt.Println("After a moment of disorientation, you realize you're not alone in this cramped space. Through a small crack in the pit, a dim light flickers, resembling the glow of a fire. The confined area restricts your movement, and the hum of what sounds like many large insects fills the air, creating an eerie ambiance.")
 			fmt.Println("You assess your options in this predicament. The crack in the pit offers a glimpse into an unknown space beyond, illuminated by the mysterious light. What will you do? EXPLORE the source of the light and the insect-like sounds, or attempt to find a way to CLIMB out and continue your journey through the cavern?")
 			fmt.Scanln(&action)
+			action = strings.ToLower(action)
+
 			switch action {
 			case "explore":
-				fmt.Println("You chose to slide through the small crack and investigate the room ahead")
+				fmt.Println("*****")
+				fmt.Println("You chose to slide through the small crack and investigate the room ahead.")
 				break
 			case "climb":
+				fmt.Println("*****")
 				fmt.Println("You try to climb back up out of the pit, but the walls are too slick and you are unable to gain any traction. You decide to explore the room ahead.")
 				break
 			default:
 				fmt.Println("Please choose straight or back")
 			}
-			break
-
-		default:
-			fmt.Println("Please choose left or straight")
 		}
 	}
 }
